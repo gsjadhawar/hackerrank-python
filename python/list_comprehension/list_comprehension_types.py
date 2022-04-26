@@ -58,3 +58,37 @@ Evaluation:
         apply function f2 on all elements in tmp2 --> f2_tmp2 
     S3: L =  [ f1_tmp1 * f2_tmp2 ]
 """
+L = [(x**2, y**3) for x in range(1, 5) for y in range(2, 7)]
+print(L)
+
+
+"""
+Syntax 7 
+Two variable condition 
+L=[(f(x), f(y)) for x in iterable1 if C(x) for y in iterable2 C(y)]
+    S1: spilt iter1 into its constituents elements --> tmp1
+        spilt iter2 into its constituents elements --> tmp2
+    S2: apply function C(x) on tmp1 --> Cx_tmp1
+        apply function C(y) on tmp2 --> Cy_tmp2
+    S2: apply function f(x) onto Cx_tmp1
+        apply function f(y) onto Cy_tmp2        
+"""
+L = [(x**2, y**3) for x in range(1, 20) if x % 2 == 1 for y in range(1, 10) if y % 2 == 1]
+print(L)
+
+
+"""
+Syntax 8 
+"""
+L = [x**2 + y**3 for x in range(1, 20) if x % 2 == 1 for y in range(1, 10) if y % 2 == 1]
+print(L)
+
+
+"""
+Syntax 9 
+
+L = [(f(x)+f(y)) for x in iter1 if C(x) for y in iter2 if C(y) if C(f(x)+f(y))]
+"""
+
+L=[x**2 + y**3 for x in range(1, 20) if x % 2 == 1 for y in range(1, 10) if y % 2 == 1 if (x**2 + y**3) > 200]
+print(L)
